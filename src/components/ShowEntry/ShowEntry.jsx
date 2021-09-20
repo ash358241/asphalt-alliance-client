@@ -1,6 +1,7 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap";
+import { cardContainer, Button } from "react-bootstrap";
 import { useHistory } from "react-router";
+import "../ShowEntries/ShowEntries.css";
 
 const ShowEntry = ({ entry }) => {
   // console.log(entry)
@@ -13,14 +14,30 @@ const ShowEntry = ({ entry }) => {
   };
   return (
     <div className="col-md-3">
-      <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={imageURL} />
-        <Card.Body>
-          <Card.Title>{car}</Card.Title>
-          <Card.Text>{ans}</Card.Text>
+      {/* <cardContainer style={{ width: "18rem" }}>
+        <cardContainer.Img variant="top" src={imageURL} />
+        <cardContainer.Body>
+          <cardContainer.Title>{car}</cardContainer.Title>
+          <cardContainer.Text>{ans}</cardContainer.Text>
           <Button variant="primary" onClick={() => handleClick(_id)}>Explore</Button>
-        </Card.Body>
-      </Card>
+        </cardContainer.Body>
+      </cardContainer> */}
+
+<div className="showEntry">
+<div class="wrapper">
+        <div class="cardContainer">
+        <img src={imageURL} alt="" />
+            <div class="descriptions">
+                <h1>{car}</h1>
+                <p>
+                    If you have a problem and there is nowhere else to turn, the mysterious and elusive Robert McCall will deliver the vigilante justice you seek. This time, however, McCall's past cuts especially close to home when thugs kill Susan Plummer -- his best friend and former colleague. Now out for revenge, McCall must take on a crew of highly trained assassins who'll stop at nothing to destroy him.                </p>
+                <button onClick={() => handleClick(_id)}>
+                    Explore
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
     </div>
   );
 };
