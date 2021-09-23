@@ -27,7 +27,7 @@ height:100%;
 left:0;
 width:60px;
 overflow:hidden;
-transition: all .3s ease;
+transition: all .05s ease;
 transform:translateZ(0) scale(1,1);
 z-index:1000;
 }

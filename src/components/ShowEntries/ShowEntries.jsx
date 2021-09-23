@@ -22,7 +22,7 @@ const ShowEntries = () => {
 
   }, []);
   return (
-    <div className="showEntries" style={{height: '80vh'}}>
+    <div className="showEntries" >
       <div className="container-fluid">
       <div className="row">
         <h1 className="text-center mb-3">Featured Entries</h1>

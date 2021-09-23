@@ -48,6 +48,9 @@ const Header = () => {
             <Nav.Link href="#services" className="mr-md-5" active>
               <Link className="link" to="/dashboard">Dashboard</Link>
             </Nav.Link>
+            <Nav.Link href="#services" className="mr-md-5" active>
+              <Link className="link" to="/signIn">Login</Link>
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
