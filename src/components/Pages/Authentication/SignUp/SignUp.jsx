@@ -65,7 +65,6 @@ const handleRegister = (e) => {
         setUser(newUserInfo);
         updateUserName(user.name);
         toast.success(success);
-        toast.dismiss(success);
         setLoggedInUser(newUserInfo);
         history.replace(from);
         })
@@ -73,7 +72,7 @@ const handleRegister = (e) => {
             const newUserInfo = {...user};
             newUserInfo.error = error.message;
             newUserInfo.success = false;
-            toast.dismiss(success)
+            toast.remove(success)
             toast.error(error.message)
             setUser(newUserInfo);
         });

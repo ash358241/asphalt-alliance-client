@@ -50,9 +50,9 @@ const SignIn = () => {
   
 
   const handleSignIn = (e) => {
-
+    const execute = toast.success("SignedIn Successful");
     if (user.email && user.password) {
-      const success = toast.success("SignedIn Successful");
+      
       firebase
         .auth()
         .signInWithEmailAndPassword(user.email, user.password)
@@ -65,8 +65,7 @@ const SignIn = () => {
           newUserInfo.success = true;
           setUser(newUserInfo);
           console.log("sign in user info", res.user);
-          toast.success(success);
-          toast.dismiss(success);
+          toast.success(execute);
           setLoggedInUser(newUserInfo);
           history.replace(from);
         })
@@ -74,7 +73,7 @@ const SignIn = () => {
           const newUserInfo = { ...user };
           newUserInfo.error = error.message;
           newUserInfo.success = false;
-          toast.dismiss(success)
+          toast.remove(execute)
           toast.error(error.message)
           setUser(newUserInfo);
         });
@@ -93,7 +92,7 @@ const SignIn = () => {
         backgroundColor: "#F4F7FA",
       }}
     >
-      <Toaster position="top-center" reverseOrder={false} />
+      <Toaster position="top-center" />
       <div className="container px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
         <div className="cardItem card0 border-0 bg-white">
           <div className="row d-flex">

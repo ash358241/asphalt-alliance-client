@@ -1,8 +1,15 @@
 .link{
-    color: #ffffff;
-    text-decoration: none;
+    color: #fff;
+    margin-right: 10px;
     font-size: 18px;
-    font-weight: bold;
+    transition: all 0.5s ease;
+    font-weight: 700;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.link:hover{
+    color: cyan;
 }
 
 Navbar{
