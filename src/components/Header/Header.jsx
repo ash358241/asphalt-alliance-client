@@ -17,6 +17,7 @@ const Header = () => {
     });
   }, []);
   return (
+    <>
     <Navbar
       collapseOnSelect
       expand="lg"
@@ -55,6 +56,7 @@ const Header = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    </>
   );
 };
 

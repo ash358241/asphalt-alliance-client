@@ -2,9 +2,12 @@ import React from 'react';
 import { Container } from "react-bootstrap";
 import "./Footer.css";
 import { followUs, contactUs } from "../FooterData/FooterData";
+import Fade from 'react-reveal/Fade';
 
 const Footer = () => {
     return (
+        <>
+        <Fade bottom>
         <div className="footer">
         <Container>
           <div className="footerContent row">
@@ -65,6 +68,8 @@ const Footer = () => {
           </div>
         </Container>
       </div>
+        </Fade>
+        </>
     );
 };
 

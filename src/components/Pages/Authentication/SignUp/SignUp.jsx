@@ -8,6 +8,8 @@ import firebaseConfig from '../firebase.config';
 import { useHistory, useLocation } from 'react-router-dom';
 import { UserContext } from "../../../../App";
 import toast, { Toaster } from "react-hot-toast";
+import Zoom from 'react-reveal/Zoom';
+
 
 const SignUp = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -94,7 +96,9 @@ const updateUserName = (name) => {
 }
 
   return (
-    <div classNameName="signUpCard" style={{minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#F4F7FA'}}>
+    <div style={{backgroundColor: '#F4F7FA'}}>
+    <Zoom>
+    <div classNameName="signUpCard" style={{minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
        <Toaster position="top-center" reverseOrder={false} />
       <div className="container px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
         <div className="cardItem card0 border-0 bg-white">
@@ -161,6 +165,8 @@ const updateUserName = (name) => {
           </Link>
         </button>
       </div>
+    </div>
+    </Zoom>
     </div>
   );
 };

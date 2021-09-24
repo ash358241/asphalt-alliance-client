@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import ShowEntry from "../ShowEntry/ShowEntry";
+import Fade from 'react-reveal/Fade';
 
 const ShowEntries = () => {
   const [entries, setEntries] = useState([]);
@@ -20,7 +21,9 @@ const ShowEntries = () => {
     //         .catch(error => console.error(error))
   }, []);
   return (
-    <div className="showEntries pb-4" style={{minHeight: "100vh"}}>
+    <>
+    <Fade bottom>
+    <div className="showEntries py-5" style={{minHeight: "100vh"}}>
       <div className="container-fluid">
         <div className="row">
           <h1 className="text-center mb-4">Featured Entries</h1>
@@ -32,6 +35,8 @@ const ShowEntries = () => {
         </div>
       </div>
     </div>
+    </Fade>
+    </>
   );
 };
 

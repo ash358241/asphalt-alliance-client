@@ -7,6 +7,7 @@ import firebaseConfig from "../firebase.config";
 import { useHistory, useLocation } from "react-router-dom";
 import { UserContext } from "../../../../App";
 import toast, { Toaster } from "react-hot-toast";
+import Zoom from 'react-reveal/Zoom';
 
 const SignIn = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -82,6 +83,8 @@ const SignIn = () => {
   };
 
   return (
+    <div style={{backgroundColor: '#F4F7FA'}}>
+    <Zoom>
     <div
       classNameName="signInCard"
       style={{
@@ -89,7 +92,6 @@ const SignIn = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#F4F7FA",
       }}
     >
       <Toaster position="top-center" />
@@ -163,6 +165,8 @@ const SignIn = () => {
           </Link>
         </button>
       </div>
+    </div>
+    </Zoom>
     </div>
   );
 };
