@@ -1,7 +1,9 @@
 import React from 'react'
 import firebase from "firebase/compat/app";
 import { auth } from './firebase'
-import { Button } from 'react-bootstrap'
+import '../ChatProps/Signin.css';
+import { Link } from 'react-router-dom';
+import googleLogo from "../../img/search.png"
 
 const SignIn = () => {
     function signInWithGoogle() {
@@ -9,9 +11,26 @@ const SignIn = () => {
         auth.signInWithPopup(provider)
     }
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', height: '100vh', alignItems: 'center' }}>
-            <Button style={{ padding: '30px', fontSize: '20px', borderRadius: '0', fontWeight: '600' }} onClick={signInWithGoogle}>Sign In With Google</Button>
-        </div>
+        <div className="container py-5 my-xl-5">
+			<div className="logo text-center w-25 mx-auto">
+				<Link to="/">
+					<h1>Asphalt Alliance</h1>
+				</Link>
+			</div>
+			<div className="d-flex align-items-center justify-content-center pb-5 my-5">
+				<div className="login-register login p-md-5 p-3">
+					<h4 className="mb-5">Login With</h4>
+					<button className="btn btn-outline-secondary social-login" onClick={signInWithGoogle}>
+						<img src={googleLogo} alt="" style={{ maxWidth: "28px" }} />
+						Continue with Google
+					</button>
+					<h5 className="mt-3">
+                        <h6 style={{color:'blue'}}>OR</h6>
+						<span>Signin with <Link to="/signIn">email-password</Link> to chat</span>
+					</h5>
+				</div>
+			</div>
+		</div>
     )
 }
 

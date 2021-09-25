@@ -1,0 +1,56 @@
+.login-register.login {
+	height: 457px;
+}
+.login-register {
+	background: #ffffff;
+	border: 1px solid #ababab;
+	box-sizing: border-box;
+	border-radius: 4px;
+	text-align: center;
+	width: 570px;
+	padding: 55px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.btn.social-login {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 20px;
+	color: #000;
+	width: 100%;
+	display: grid;
+	align-items: center;
+	justify-items: flex-start;
+	grid-auto-flow: column;
+	position: relative;
+	padding: 10px 9px;
+	background: #ffffff;
+	border: 1px solid #c7c7c7;
+	box-sizing: border-box;
+	border-radius: 57px;
+	height: 51px;
+}
+
+.login-register h4 {
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 29px;
+	color: #000000;
+}
+
+.login-register h5 {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 20px;
+	color: #000000;
+}
+
+.login-register h5 a {
+	margin-left: 5px;
+	text-decoration: underline;
+	text-decoration-color: #a0c9ff;
+	color: var(--primary);
+}
