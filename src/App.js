@@ -13,9 +13,15 @@ import SignUp from './components/Pages/Authentication/SignUp/SignUp';
 import { createContext, useState } from 'react';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
+import Chat from '../src/components/ChatProps/Chat';
+import Signin from './components/ChatProps/Signin';
+import { auth } from '../src/components/ChatProps/firebase'
+import { useAuthState } from 'react-firebase-hooks/auth'
+
 export const UserContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
+  const [user] = useAuthState(auth)
   return (
     <div>
       <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
@@ -42,6 +48,7 @@ function App() {
         </Switch>
       </Router>
       </UserContext.Provider>
+      {user ? <Chat /> : <Signin />}
     </div>
   );
 }
