@@ -7,7 +7,8 @@ import firebaseConfig from "../firebase.config";
 import { useHistory, useLocation } from "react-router-dom";
 import { UserContext } from "../../../../App";
 import toast, { Toaster } from "react-hot-toast";
-import Zoom from "react-reveal/Zoom";
+import Slide from 'react-reveal/Slide';
+import Fade from 'react-reveal/Fade';
 import { emailRegex, passRegex } from "../../../Regexp/Regexp";
 
 const SignUp = () => {
@@ -136,7 +137,7 @@ const SignUp = () => {
 
   return (
     <div style={{ backgroundColor: "#F4F7FA" }}>
-      <Zoom>
+      {/* <Zoom> */}
         <div
           classNameName="signUpCard"
           style={{
@@ -151,18 +152,23 @@ const SignUp = () => {
             <div className="cardItem card0 border-0 bg-white">
               <div className="row d-flex">
                 <div className="col-lg-6">
+                <Link to="/">Return to home</Link>
                   <div className="card1 pb-5">
                     <div className="row px-5 justify-content-center mt-4 mb-5 border-line">
                       {" "}
+                      <Slide right>
                       <img
                         src="https://friendlystock.com/wp-content/uploads/2019/10/7-black-businesswoman-driving-flashy-car-cartoon-clipart.jpg"
                         alt=""
                         className="image"
                       />{" "}
+                        </ Slide>
                     </div>
                   </div>
                 </div>
                 <form onSubmit={handleRegister} className="col-lg-6">
+
+                  <Fade top>
                   <div className="card2 cardItem border-0 px-4 py-5">
                     <div className="row px-3">
                       {" "}
@@ -218,17 +224,19 @@ const SignUp = () => {
                       </small>{" "}
                     </div>
                   </div>
+                  </Fade>
+
                 </form>
               </div>
             </div>
-            <button className="btn btn-info text-light mt-4">
+            {/* <button className="btn btn-info text-light mt-4">
               <Link to="/" style={{ textDecoration: "none", color: "white" }}>
                 Back To Home
               </Link>
-            </button>
+            </button> */}
           </div>
         </div>
-      </Zoom>
+      {/* </Zoom> */}
     </div>
   );
 };

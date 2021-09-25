@@ -23,7 +23,7 @@ const ShowEntries = () => {
   return (
     <>
     <Fade bottom>
-    <div className="showEntries py-5" style={{minHeight: "100vh"}}>
+    <div className="showEntries py-5" style={{minHeight: "100vh"}} >
       <div className="container-fluid">
         <div className="row">
           <h1 className="text-center mb-4">Featured Entries</h1>

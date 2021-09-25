@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import "./EntryDetails.css";
 import Slide from 'react-reveal/Slide';
+import { Link } from "react-router-dom";
 
 const EntryDetails = () => {
   const { entryId } = useParams();
@@ -38,6 +39,7 @@ const EntryDetails = () => {
           </div>
           <div className="description">
             <p>{entry.ans}</p>
+            <Link to="/" style={{textDecoration:"none", color:"black"}}><i class="fas fa-angle-double-left"> Back to home</i></Link>
           </div>
           </Slide>
         </div>
