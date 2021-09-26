@@ -14,7 +14,6 @@ const renderData = entries => {
           {entries.map((entry) => (
             <ShowEntry entry={entry} key={entry._id}></ShowEntry>
           ))}
-          {/* {spinner && <LoadingSpinner />} */}
         </div>
       </div>
     </div>
@@ -107,8 +106,7 @@ const ShowEntries = () => {
 
   return (
     <div>
-      {/* {spinner && <LoadingSpinner />} */}
-    {renderData(currentItems)}
+    {spinner ? <LoadingSpinner /> : renderData(currentItems)}
     <ul className="pageNumbers">
         <li>
           <button
