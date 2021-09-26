@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Entries.css";
 import axios from "axios";
 import Sidebar from "../../../Sidebar/Sidebar";
+import Zoom from 'react-reveal/Zoom';
 
 const Entries = () => {
   const [entry, setEntry] = useState({});
@@ -68,6 +69,7 @@ const Entries = () => {
       <div >
         <Sidebar></Sidebar>
       </div>
+      <Zoom top>
       <div className="col-md-12 cardComponent">
           <div class="card">
             <h5 class="text-center mb-4">Powering world-class car enthusiasm</h5>
@@ -166,6 +168,7 @@ const Entries = () => {
             </form>
           </div>
       </div>
+      </Zoom>
     </div>
 
 

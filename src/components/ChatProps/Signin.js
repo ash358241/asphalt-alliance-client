@@ -4,6 +4,7 @@ import { auth } from './firebase'
 import '../ChatProps/Signin.css';
 import { Link } from 'react-router-dom';
 import googleLogo from "../../img/search.png"
+import Zoom from 'react-reveal/Zoom';
 
 const SignIn = () => {
     function signInWithGoogle() {
@@ -11,6 +12,8 @@ const SignIn = () => {
         auth.signInWithPopup(provider)
     }
     return (
+        <>
+        <Zoom>
         <div className="container py-5 my-xl-5">
 			<div className="logo text-center w-25 mx-auto">
 				<Link to="/">
@@ -31,6 +34,8 @@ const SignIn = () => {
 				</div>
 			</div>
 		</div>
+        </Zoom>
+        </>
     )
 }
 
