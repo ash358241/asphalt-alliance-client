@@ -1,19 +1,20 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Entries.css";
 import axios from "axios";
 import Sidebar from "../../../Sidebar/Sidebar";
-import Zoom from 'react-reveal/Zoom';
+import Zoom from "react-reveal/Zoom";
+import { UserContext } from "../../../../App";
 
 const Entries = () => {
   const [entry, setEntry] = useState({});
   const [imageURL, setImageURL] = useState(null);
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
   const handleBlur = (e) => {
     const newData = { ...entry };
     newData[e.target.name] = e.target.value;
     setEntry(newData);
   };
-  
 
   const handleSubmit = (e) => {
     const formData = {
@@ -23,7 +24,7 @@ const Entries = () => {
       year: entry.year,
       ans: entry.ans,
       imageURL: imageURL,
-
+      email: loggedInUser.email,
     };
 
     fetch("http://localhost:8000/addEntry", {
@@ -63,115 +64,113 @@ const Entries = () => {
 
   return (
     <div className="entries">
-
-
-<div className="row w-100">
-      <div >
-        <Sidebar></Sidebar>
-      </div>
-      <Zoom top>
-      <div className="col-md-12 cardComponent">
-          <div class="card">
-            <h5 class="text-center mb-4">Powering world-class car enthusiasm</h5>
-            <form class="form-card" onSubmit={handleSubmit}>
-              <div class="row justify-content-between text-left">
-                <div class="form-group col-sm-6 flex-column d-flex">
-                  {" "}
-                  <label class="form-control-label px-3">
-                    Car Make<span class="text-danger"> *</span>
-                  </label>{" "}
-                  <input
-                    type="text"
-                    name="car"
-                    placeholder="Enter car maker name"
-                    onBlur={handleBlur}
-                  />{" "}
+      <div className="row w-100">
+        <div className="col-md-2">
+          <Sidebar></Sidebar>
+        </div>
+        <Zoom top>
+          <div className="col-md-10 cardComponent">
+            <div class="card">
+              <h5 class="text-center mb-4">
+                Powering world-class car enthusiasm
+              </h5>
+              <form class="form-card" onSubmit={handleSubmit}>
+                <div class="row justify-content-between text-left">
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    {" "}
+                    <label class="form-control-label px-3">
+                      Car Make<span class="text-danger"> *</span>
+                    </label>{" "}
+                    <input
+                      type="text"
+                      name="car"
+                      placeholder="Enter car maker name"
+                      onBlur={handleBlur}
+                    />{" "}
+                  </div>
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    {" "}
+                    <label class="form-control-label px-3">
+                      Car Model<span class="text-danger"> *</span>
+                    </label>{" "}
+                    <input
+                      type="text"
+                      name="carModel"
+                      placeholder="Enter car model name"
+                      onBlur={handleBlur}
+                    />{" "}
+                  </div>
                 </div>
-                <div class="form-group col-sm-6 flex-column d-flex">
-                  {" "}
-                  <label class="form-control-label px-3">
-                    Car Model<span class="text-danger"> *</span>
-                  </label>{" "}
-                  <input
-                    type="text"
-                    name="carModel"
-                    placeholder="Enter car model name"
-                    onBlur={handleBlur}
-                  />{" "}
+                <div class="row justify-content-between text-left">
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    {" "}
+                    <label class="form-control-label px-3">
+                      Map Location<span class="text-danger"> *</span>
+                    </label>{" "}
+                    <input
+                      type="text"
+                      name="location"
+                      placeholder=""
+                      onBlur={handleBlur}
+                    />{" "}
+                  </div>
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    {" "}
+                    <label class="form-control-label px-3">
+                      Year<span class="text-danger"> *</span>
+                    </label>{" "}
+                    <input
+                      type="number"
+                      name="year"
+                      placeholder=""
+                      onBlur={handleBlur}
+                    />{" "}
+                  </div>
                 </div>
-              </div>
-              <div class="row justify-content-between text-left">
-                <div class="form-group col-sm-6 flex-column d-flex">
-                  {" "}
-                  <label class="form-control-label px-3">
-                    Map Location<span class="text-danger"> *</span>
-                  </label>{" "}
-                  <input
-                    type="text"
-                    name="location"
-                    placeholder=""
-                    onBlur={handleBlur}
-                  />{" "}
+                <div class="row justify-content-between text-left">
+                  <div class="form-group col-sm-6 flex-column d-flex">
+                    {" "}
+                    <label class="form-control-label px-3">
+                      Upload Car images<span class="text-danger"> *</span>
+                    </label>{" "}
+                    <input
+                      type="file"
+                      multiple
+                      name="image"
+                      placeholder=""
+                      onChange={handleImageUpload}
+                    />{" "}
+                  </div>
                 </div>
-                <div class="form-group col-sm-6 flex-column d-flex">
-                  {" "}
-                  <label class="form-control-label px-3">
-                    Year<span class="text-danger"> *</span>
-                  </label>{" "}
-                  <input
-                    type="number"
-                    name="year"
-                    placeholder=""
-                    onBlur={handleBlur}
-                  />{" "}
+                <div class="row justify-content-between text-left">
+                  <div class="form-group col-12 flex-column d-flex">
+                    {" "}
+                    <label class="form-control-label px-3">
+                      Tell about your enthusiasm
+                      <span class="text-danger"> *</span>
+                    </label>{" "}
+                    <input
+                      type="text"
+                      name="ans"
+                      placeholder=""
+                      onBlur={handleBlur}
+                    />{" "}
+                  </div>
                 </div>
-              </div>
-              <div class="row justify-content-between text-left">
-                <div class="form-group col-sm-6 flex-column d-flex">
-                  {" "}
-                  <label class="form-control-label px-3">
-                    Upload Car images<span class="text-danger"> *</span>
-                  </label>{" "}
-                  <input
-                    type="file"
-                    multiple
-                    name="image"
-                    placeholder=""
-                    onChange={handleImageUpload}
-                  />{" "}
+                <div class="row justify-content-end">
+                  <div class="form-group col-sm-6">
+                    {" "}
+                    <br />
+                    <button type="submit" class="btn-block btn-primary">
+                      Request an entry
+                    </button>{" "}
+                  </div>
                 </div>
-              </div>
-              <div class="row justify-content-between text-left">
-                <div class="form-group col-12 flex-column d-flex">
-                  {" "}
-                  <label class="form-control-label px-3">
-                    Tell about your enthusiasm
-                    <span class="text-danger"> *</span>
-                  </label>{" "}
-                  <input
-                    type="text"
-                    name="ans"
-                    placeholder=""
-                    onBlur={handleBlur}
-                  />{" "}
-                </div>
-              </div>
-              <div class="row justify-content-end">
-                <div class="form-group col-sm-6">
-                  {" "}
-                  <br />
-                  <button type="submit" class="btn-block btn-primary">
-                    Request an entry
-                  </button>{" "}
-                </div>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
+        </Zoom>
       </div>
-      </Zoom>
-    </div>
-
-
     </div>
   );
 };

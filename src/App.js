@@ -13,16 +13,12 @@ import SignUp from './components/Pages/Authentication/SignUp/SignUp';
 import { createContext, useState } from 'react';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import ChatBox from './components/ChatBox/ChatBox';
-
-// import Chat from '../src/components/ChatProps/Chat';
-// import Signin from './components/ChatProps/Signin';
-// import { auth } from '../src/components/ChatProps/firebase'
-// import { useAuthState } from 'react-firebase-hooks/auth'
+import SpecificEntry from './components/SpecificEntry/SpecificEntry';
 
 export const UserContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
-  // const [user] = useAuthState(auth)
+
   return (
     <div>
       <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
@@ -33,9 +29,13 @@ function App() {
           </Route>
           <PrivateRoute path="/dashboard">
           <Entries></Entries>
+          {/* <SpecificEntry></SpecificEntry> */}
           </PrivateRoute>
           <Route path="/entry/:entryId">
           <EntryDetails></EntryDetails>
+        </Route>
+        <Route path="/specificEntry">
+          <SpecificEntry></SpecificEntry>
         </Route>
         <Route path="/signIn">
           <SignIn></SignIn>
@@ -52,7 +52,6 @@ function App() {
         </Switch>
       </Router>
       </UserContext.Provider>
-      {/* {user ? <Chat /> : <Signin />} */}
     </div>
   );
 }
