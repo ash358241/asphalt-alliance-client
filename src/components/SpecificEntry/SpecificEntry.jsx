@@ -3,6 +3,7 @@ import { Table } from "react-bootstrap";
 import { UserContext } from "../../App";
 import Sidebar from "../Sidebar/Sidebar";
 import './SpecificEntry.css';
+import Fade from 'react-reveal/Fade';
 
 const SpecificEntry = () => {
   const [entryData, setEntryData] = useState([]);
@@ -43,6 +44,7 @@ const SpecificEntry = () => {
               <Sidebar></Sidebar>
           </div>
           <div className="contentTwo col-md-10">
+          <Fade top>
           <Table striped bordered hover >
         <thead>
           <tr>
@@ -71,6 +73,7 @@ const SpecificEntry = () => {
           ))}
         </tbody>
       </Table>
+          </Fade>
           </div>
       </div>
     </div>

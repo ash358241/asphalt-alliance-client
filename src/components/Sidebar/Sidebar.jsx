@@ -7,6 +7,7 @@ import { UserContext } from '../../App';
 
 const Sidebar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    console.log(loggedInUser);
 
     const [user, setUser] = useState({
         isSignedIn: false,

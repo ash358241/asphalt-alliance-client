@@ -38,22 +38,7 @@ const SignUp = () => {
   const [regInfo, setRegInfo] = useState({});
 
   const handleBlur = (e) => {
-    // let isFieldValid = true;
-    // if(e.target.name === "email"){
-    //     isFieldValid = /\S+@\S+\.\S+/.test(e.target.value);
-    // }
-    // if(e.target.name === "password"){
-    //     const isPasswordValid = e.target.value.length > 6;
-    //     const passwordHasNumber =  /\d{1}/.test(e.target.value);
-    //     isFieldValid = isPasswordValid && passwordHasNumber;
-    // }
-    // if(isFieldValid){
-    //     const newUserInfo = {...user};
-    //     newUserInfo[e.target.name] = e.target.value;
-    //     setUser(newUserInfo);
-    // }
-    // e.preventDefault();
-
+    
     const inputName = e.target.name;
     const inputValue = e.target.value;
     const info = { ...regInfo };
@@ -76,7 +61,7 @@ const SignUp = () => {
       if (!passRegex.test(inputValue)) {
         setInputError({
           name: inputName,
-          errorMessage: "Please enter a Valid password with min 8 letters having at least a symbol, upper and lower case letter and a number !",
+          errorMessage: "Please enter a Valid password with min 8 characters having at least a symbol, upper and lower case letter and a number !",
         });
         info[inputName] = null;
         setRegInfo(info);
@@ -152,7 +137,7 @@ const SignUp = () => {
             <div className="cardItem card0 border-0 bg-white">
               <div className="row d-flex">
                 <div className="col-lg-6">
-                <Link to="/">Return to home</Link>
+                <Link to="/" style={{textDecoration:'none'}}>Return to home</Link>
                   <div className="card1 pb-5">
                     <div className="row px-5 justify-content-center mt-4 mb-5 border-line">
                       {" "}

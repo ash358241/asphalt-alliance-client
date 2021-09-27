@@ -16,8 +16,8 @@ const SignIn = () => {
         <Zoom>
         <div className="container py-5 my-xl-5">
 			<div className="logo text-center w-25 mx-auto">
-				<Link to="/">
-					<h1>Asphalt Alliance</h1>
+				<Link to="/" style={{textDecoration:'none'}}>
+					<h1 >Asphalt Alliance</h1>
 				</Link>
 			</div>
 			<div className="d-flex align-items-center justify-content-center pb-5 my-5">
