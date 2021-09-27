@@ -11,7 +11,7 @@ const SpecificEntry = () => {
   // console.log(loggedInUser.email)
 
   useEffect(() => {
-    fetch(`http://localhost:8000/specificEntry?email=${loggedInUser.email}`)
+    fetch(`https://shrouded-inlet-53966.herokuapp.com/specificEntry?email=${loggedInUser.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -22,7 +22,7 @@ const SpecificEntry = () => {
 
   const handleDelete = (id) => {
     console.log(id);
-    fetch(`http://localhost:8000/deleteEntry/${id}`, {
+    fetch(`https://shrouded-inlet-53966.herokuapp.com/deleteEntry/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

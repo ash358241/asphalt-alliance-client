@@ -12,7 +12,7 @@ const EntryDetails = () => {
   const [spinner, setSpinner] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/entry/${entryId}`)
+    fetch(`https://shrouded-inlet-53966.herokuapp.com/entry/${entryId}`)
       .then((res) => res.json())
       .then((data) => {
         setEntry(data);
@@ -30,7 +30,7 @@ const EntryDetails = () => {
           </div>
           <div className="textContent">
             <span>{entry.car}</span>
-            <h5 class="logo-1">{entry.carModel}</h5>
+            <h5>{entry.carModel}</h5>
           </div>
           <Slide bottom>
           <div className="additionalContent">

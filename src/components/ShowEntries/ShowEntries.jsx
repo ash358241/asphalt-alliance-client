@@ -23,7 +23,7 @@ const ShowEntries = () => {
   const [entries, setEntries] = useState([]);
   const [spinner, setSpinner] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:8000/entries")
+    fetch("https://shrouded-inlet-53966.herokuapp.com/entries")
       .then((res) => res.json())
       .then((data) => {
         setEntries(data);

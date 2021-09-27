@@ -15,10 +15,10 @@ const ShowEntry = ({ entry }) => {
   return (
     <div className="col-md-3">
       <div className="showEntry">
-        <div class="wrapper">
-          <div class="cardContainer">
+        <div className="wrapper">
+          <div className="cardContainer">
             <img src={imageURL} alt="" />
-            <div class="descriptions">
+            <div className="descriptions">
               <h1>{car}</h1>
               <p className="enthusiasm">
                 {ans}{" "}

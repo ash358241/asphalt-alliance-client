@@ -27,7 +27,7 @@ const Entries = () => {
       email: loggedInUser.email,
     };
 
-    fetch("http://localhost:8000/addEntry", {
+    fetch("https://shrouded-inlet-53966.herokuapp.com/addEntry", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(formData),
