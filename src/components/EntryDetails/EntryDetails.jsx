@@ -29,13 +29,13 @@ const EntryDetails = () => {
             <img className="carImg" src={entry.imageURL} alt="" />
           </div>
           <div className="textContent">
-            <h3>{entry.car}</h3>
-            <h5>{entry.carModel}</h5>
+            <span>{entry.car}</span>
+            <h5 class="logo-1">{entry.carModel}</h5>
           </div>
           <Slide bottom>
           <div className="additionalContent">
-            <h6>Location: {entry.location}</h6>
-            <h6>Model Year: {entry.year}</h6>
+            <h6><strong>Location: {entry.location}</strong></h6>
+            <h6><strong>Model Year: {entry.year}</strong></h6>
           </div>
           <div className="description">
             <p>{entry.ans}</p>

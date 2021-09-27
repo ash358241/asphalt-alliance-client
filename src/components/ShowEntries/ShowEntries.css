@@ -22,7 +22,7 @@
     transition: all .5s cubic-bezier(.8,.5,.2,1.4);
     overflow: hidden;
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 .cardContainer img{
     width: 100%;
@@ -62,8 +62,11 @@
     margin: 0px;
 }
 .cardContainer p{
-    line-height: 24px;
-    height: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 12;
+    -webkit-box-orient: vertical;
 }
 .cardContainer button{
     width: fit-content;
@@ -84,10 +87,7 @@
 
 @media(max-width:668px){
     .wrapper{
-        /* display: grid;
-        grid-template-columns: repeat(1, 1fr); */
         flex-wrap: wrap;
-
     }
 }
 

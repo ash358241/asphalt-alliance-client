@@ -36,11 +36,12 @@ const Entries = () => {
       .then((data) => {
         console.log(data);
         if (!data) {
-          alert("Entry added successfully!");
+          alert("Entry added successfully !!!")
         }
       })
       .catch((error) => {
         console.error(error);
+        alert(error);
       });
 
     e.preventDefault();
@@ -63,6 +64,7 @@ const Entries = () => {
   };
 
   return (
+    <>
     <div className="entries">
       <div className="row w-100">
         <div className="col-md-2">
@@ -86,6 +88,7 @@ const Entries = () => {
                       name="car"
                       placeholder="Enter car maker name"
                       onBlur={handleBlur}
+                      required
                     />{" "}
                   </div>
                   <div class="form-group col-sm-6 flex-column d-flex">
@@ -98,6 +101,7 @@ const Entries = () => {
                       name="carModel"
                       placeholder="Enter car model name"
                       onBlur={handleBlur}
+                      required
                     />{" "}
                   </div>
                 </div>
@@ -112,6 +116,7 @@ const Entries = () => {
                       name="location"
                       placeholder=""
                       onBlur={handleBlur}
+                      required
                     />{" "}
                   </div>
                   <div class="form-group col-sm-6 flex-column d-flex">
@@ -124,6 +129,7 @@ const Entries = () => {
                       name="year"
                       placeholder=""
                       onBlur={handleBlur}
+                      required
                     />{" "}
                   </div>
                 </div>
@@ -139,6 +145,7 @@ const Entries = () => {
                       name="image"
                       placeholder=""
                       onChange={handleImageUpload}
+                      required
                     />{" "}
                   </div>
                 </div>
@@ -154,6 +161,7 @@ const Entries = () => {
                       name="ans"
                       placeholder=""
                       onBlur={handleBlur}
+                      required
                     />{" "}
                   </div>
                 </div>
@@ -172,6 +180,7 @@ const Entries = () => {
         </Zoom>
       </div>
     </div>
+    </>
   );
 };
 

@@ -6,8 +6,7 @@ import './Pagination.css';
 
 const renderData = entries => {
   return(
-    <Fade bottom>
-    <div className="showEntries py-5" style={{minHeight: "100vh"}} >
+    <div className="showEntries">
       <div className="container-fluid">
         <div className="row">
           <h1 className="text-center mb-4">Featured Entries</h1>
@@ -17,7 +16,6 @@ const renderData = entries => {
         </div>
       </div>
     </div>
-    </Fade>
   )
 }
 
@@ -105,7 +103,8 @@ const ShowEntries = () => {
       };
 
   return (
-    <div>
+    <Fade bottom>
+    <div className="pt-5">
     {spinner ? <LoadingSpinner /> : renderData(currentItems)}
     <ul className="pageNumbers">
         <li>
@@ -133,6 +132,7 @@ const ShowEntries = () => {
         Load More
       </button>
     </div>
+    </Fade>
   );
 };
 

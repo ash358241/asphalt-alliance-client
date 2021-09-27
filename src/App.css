@@ -1,3 +1,7 @@
+.app{
+  font-family: 'Gluten', cursive;
+}
+
 .chatImg {
   border-radius: 50%;
   height: 45px;

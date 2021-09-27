@@ -44,7 +44,7 @@ const SpecificEntry = () => {
               <Sidebar></Sidebar>
           </div>
           <div className="contentTwo col-md-10">
-          <Fade top>
+          <Fade left>
           <Table striped bordered hover >
         <thead>
           <tr>
