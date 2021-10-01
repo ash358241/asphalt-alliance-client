@@ -64,6 +64,11 @@ const Sidebar = () => {
         <i className="fa fa-tachometer" aria-hidden="true"></i> Manage Entry
       </Link>
     </li>
+    <li>
+      <Link to="/provideFeedback">
+        <i className="fa fa-tachometer" aria-hidden="true"></i> Provide Feedback
+      </Link>
+    </li>
     <li className="header">Another Menu</li>
     <li>
       <Link to="/" onClick={handleSignOut} >

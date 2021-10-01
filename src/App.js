@@ -9,6 +9,7 @@ import { createContext, useState } from "react";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import ChatBox from "./components/ChatBox/ChatBox";
 import SpecificEntry from "./components/SpecificEntry/SpecificEntry";
+import ProvideFeedback from "./components/ProvideFeedback/ProvideFeedback";
 
 export const UserContext = createContext();
 function App() {
@@ -30,6 +31,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/specificEntry">
               <SpecificEntry></SpecificEntry>
+            </PrivateRoute>
+            <PrivateRoute path="/provideFeedback">
+              <ProvideFeedback></ProvideFeedback>
             </PrivateRoute>
             <Route path="/signIn">
               <SignIn></SignIn>
