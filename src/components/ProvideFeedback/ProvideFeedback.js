@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { UserContext } from '../../App';
 import Sidebar from '../Sidebar/Sidebar';
 import "./ProvideFeedback.css";
 
 const ProvideFeedback = () => {
 
     const [feedback, setFeedback] = useState({});
+
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
 
     const handleBlur = (e) => {
         const newData = { ...feedback };
@@ -66,17 +70,17 @@ const ProvideFeedback = () => {
                         </div>
                         <br />
                         <div className="form-group">
-                            <input onBlur={handleBlur} type="email" name="email" className="form-control" placeholder="Your Email *" />
+                            <input onBlur={handleBlur} type="email" name="email" className="form-control" value={loggedInUser.email} placeholder="Your Email *" />
                         </div>
                         <br />
                         <div className="form-group">
-                            <input onBlur={handleBlur} type="text" name="address" className="form-control" placeholder="Your Address *" />
+                            <input onBlur={handleBlur} type="text" name="address" className="form-control" placeholder="Your Address *" required />
                         </div>
                         <br />
                     </div>
                     <div className="col-md-6">
                         <div className="form-group">
-                            <textarea onBlur={handleBlur} name="txtMsg" className="form-control" placeholder="Provide Feedback *"></textarea>
+                            <textarea onBlur={handleBlur} name="txtMsg" className="form-control" placeholder="Provide Feedback *" required ></textarea>
                         </div>
                         <br />
                         <div className="form-group">

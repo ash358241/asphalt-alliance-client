@@ -54,7 +54,7 @@ const Header = () => {
         console.log(err.message);
       });
   };
-  console.log(user)
+  // console.log(user)
   return (
     <>
       <Navbar
