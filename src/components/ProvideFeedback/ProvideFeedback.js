@@ -42,6 +42,7 @@ const ProvideFeedback = () => {
           });
     
         e.preventDefault();
+        e.target.reset();
       };
     return (
         <div className="provideFeedback" >

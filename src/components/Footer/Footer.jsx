@@ -7,8 +7,8 @@ import Fade from 'react-reveal/Fade';
 const Footer = () => {
     return (
         <>
-        <Fade bottom>
         <div className="footer">
+        <Fade bottom duration={2500}>
         <Container>
           <div className="footerContent row">
             <div className="col-md-4" style={{ textAlign: "left" }}>
@@ -67,8 +67,8 @@ const Footer = () => {
             <h6 className="my-3">© Copyright 2021 Asphalt Alliance</h6>
           </div>
         </Container>
-      </div>
         </Fade>
+      </div>
         </>
     );
 };
