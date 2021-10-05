@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import Feedback from "../../components/Feedback/Feedback.jsx";
 import "./Feedbacks.css";
 import Carousel from "react-elastic-carousel";
-import Fade from 'react-reveal/Fade';
-
+import Fade from "react-reveal/Fade";
 
 const Feedbacks = () => {
   const [feedbacks, setFeedbacks] = useState([]);
@@ -27,16 +26,18 @@ const Feedbacks = () => {
 
   return (
     <div className="feedbacks">
+      <div className="feedbacksContent">
       <Fade bottom duration={2500}>
-    <h1 style={{textAlign:'center', marginBottom: '20px'}}>Feedbacks</h1>
-    <div className="App">
-      <Carousel breakPoints={breakPoints}>
-        {feedbacks.map((feedback) => {
-          return <Feedback feedback={feedback}></Feedback>;
-        })}
-      </Carousel>
-    </div>
-    </Fade>
+        <h1 style={{ textAlign: "center", marginBottom: "20px" }}>Feedbacks</h1>
+        <div className="Apply">
+          <Carousel breakPoints={breakPoints}>
+            {feedbacks.map((feedback) => {
+              return <Feedback feedback={feedback}></Feedback>;
+            })}
+          </Carousel>
+        </div>
+      </Fade>
+      </div>
     </div>
   );
 };

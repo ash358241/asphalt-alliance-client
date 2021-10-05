@@ -1,11 +1,16 @@
 .feedbacks{
     background-color: #F0F8FF;
-    padding: 50px;
+    padding: 30px;
+    position: relative;
 }
 
-.App {
+.feedbacksContent{
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.Apply {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* margin-bottom: 100px; */
   }
