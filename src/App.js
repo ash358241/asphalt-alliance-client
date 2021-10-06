@@ -10,6 +10,7 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import ChatBox from "./components/ChatBox/ChatBox";
 import SpecificEntry from "./components/SpecificEntry/SpecificEntry";
 import ProvideFeedback from "./components/ProvideFeedback/ProvideFeedback";
+import { Toaster } from "react-hot-toast";
 
 export const UserContext = createContext();
 function App() {
@@ -19,6 +20,7 @@ function App() {
     <div className="app">
       <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
         <Router>
+        <Toaster position="top-center" reverseOrder={false} />
           <Switch>
             <Route path="/home">
               <Home></Home>

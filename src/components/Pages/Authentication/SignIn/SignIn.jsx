@@ -114,7 +114,7 @@ const SignIn = () => {
             alignItems: "center",
           }}
         >
-          <Toaster position="top-center" />
+          {/* <Toaster position="top-center" /> */}
           <div className="container px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
             <div className="cardItem card0 border-0 bg-white">
               <div className="row d-flex">

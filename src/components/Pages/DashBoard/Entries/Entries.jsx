@@ -4,6 +4,8 @@ import axios from "axios";
 import Sidebar from "../../../Sidebar/Sidebar";
 import Zoom from "react-reveal/Zoom";
 import { UserContext } from "../../../../App";
+import Swal from 'sweetalert2';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Entries = () => {
   const [entry, setEntry] = useState({});
@@ -17,6 +19,7 @@ const Entries = () => {
   };
 
   const handleSubmit = (e) => {
+    const loading = toast.loading('Please wait...!');
     const formData = {
       car: entry.car,
       carModel: entry.carModel,
@@ -35,8 +38,13 @@ const Entries = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        toast.dismiss(loading);
         if (!data) {
-          alert("Entry added successfully !!!")
+          Swal.fire(
+            'Good job!',
+            'Entry added successfully!',
+            'success'
+          )
         }
       })
       .catch((error) => {
@@ -45,6 +53,7 @@ const Entries = () => {
       });
 
     e.preventDefault();
+    e.target.reset();
   };
 
   const handleImageUpload = (event) => {
@@ -66,6 +75,7 @@ const Entries = () => {
   return (
     <>
     <div className="entries">
+    {/* <Toaster position="top-center" reverseOrder={false} /> */}
       <div className="row w-100">
         <div className="col-md-2">
           <Sidebar></Sidebar>

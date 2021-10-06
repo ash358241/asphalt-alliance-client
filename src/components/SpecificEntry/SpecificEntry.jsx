@@ -45,7 +45,7 @@ const SpecificEntry = () => {
           </div>
           <div className="contentTwo col-md-10">
           <Fade left>
-          <Table striped bordered hover >
+          <Table striped bordered hover variant="dark">
         <thead>
           <tr>
             <th>Car Brand</th>
@@ -65,7 +65,7 @@ const SpecificEntry = () => {
               <td>
                 <i
                   class="fas fa-trash-alt"
-                  style={{ color: "red", cursor: "pointer" }}
+                  style={{ color: "cyan", cursor: "pointer" }}
                   onClick={() => handleDelete(entry._id)}
                 ></i>
               </td>
