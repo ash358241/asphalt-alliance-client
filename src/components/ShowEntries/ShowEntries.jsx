@@ -103,7 +103,7 @@ const ShowEntries = () => {
       };
 
   return (
-    <Fade bottom>
+    <Fade bottom duration={2000}>
     <div className="pt-5">
     {spinner ? <LoadingSpinner /> : renderData(currentItems)}
     <ul className="pageNumbers">
