@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import ShowEntry from "../ShowEntry/ShowEntry";
-import Fade from 'react-reveal/Fade';
 import './Pagination.css';
+import Fade from 'react-reveal/Fade';
+
 
 const renderData = entries => {
   return(
     <div className="showEntries" id="allEntries">
       <div className="container-fluid">
         <div className="row">
+          <Fade bottom>
           <h1 className="text-center mb-4">Featured Entries</h1>
+            </Fade>
           {entries.map((entry) => (
             <ShowEntry entry={entry} key={entry._id}></ShowEntry>
           ))}
@@ -103,7 +106,7 @@ const ShowEntries = () => {
       };
 
   return (
-    <Fade bottom duration={2000}>
+    <>
     <div className="pt-5">
     {spinner ? <LoadingSpinner /> : renderData(currentItems)}
     <ul className="pageNumbers">
@@ -132,7 +135,7 @@ const ShowEntries = () => {
         Load More
       </button>
     </div>
-    </Fade>
+    </>
   );
 };
 

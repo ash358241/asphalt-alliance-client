@@ -56,7 +56,7 @@ const Header = () => {
   };
   // console.log(user)
   return (
-    <div>
+    <div id="header">
       <Navbar
         collapseOnSelect
         expand="lg"

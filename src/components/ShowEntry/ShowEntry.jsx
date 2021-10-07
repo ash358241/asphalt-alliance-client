@@ -2,6 +2,8 @@ import React from "react";
 import { cardContainer, Button } from "react-bootstrap";
 import { useHistory } from "react-router";
 import "../ShowEntries/ShowEntries.css";
+import Fade from 'react-reveal/Fade';
+
 
 const ShowEntry = ({ entry }) => {
   // console.log(entry)
@@ -13,6 +15,8 @@ const ShowEntry = ({ entry }) => {
     history.push(url);
   };
   return (
+    <>
+    <Fade bottom duration={2000}>
     <div className="col-md-3">
       <div className="showEntry">
         <div className="wrapper">
@@ -29,6 +33,8 @@ const ShowEntry = ({ entry }) => {
         </div>
       </div>
     </div>
+    </Fade>
+    </>
   );
 };
 
