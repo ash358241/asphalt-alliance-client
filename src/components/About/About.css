@@ -7,12 +7,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 .aboutTxt{
     padding: 50px;
     line-height: 32px;
+}
+
+.aboutTxt a{
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .aboutImg img{
@@ -23,12 +28,13 @@
 
 @media(max-width:668px){
     .aboutContent{
-        /* flex-wrap: wrap; */
         flex-direction: column;
     }
     .aboutImg img{
-        /* border: 3px solid red; */
         width: 100%;
         height: 100%;
+    }
+    .about{
+        min-height: auto;
     }
 }

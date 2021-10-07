@@ -17,21 +17,18 @@ const About = () => {
             <Carousel.Item>
               <img
                 src={aboutImg}
-                // style={{ width: "50vw", height: "auto" }}
                 alt="First slide"
               />
             </Carousel.Item>
             <Carousel.Item>
               <img
                 src={aboutImgTwo}
-                // style={{ width: "50vw", height: "auto" }}
                 alt="Second slide"
               />
             </Carousel.Item>
             <Carousel.Item>
               <img
                 src={aboutImgThree}
-                // style={{ width: "50vw", height: "auto" }}
                 alt="Third slide"
               />
             </Carousel.Item>
@@ -53,6 +50,7 @@ const About = () => {
             perferendis voluptatem aspernatur doloribus quas blanditiis debitis
             facilis minima! Minus eveniet nemo inventore tempore modi.
           </p>
+          <button className="btn btn-info px-4 py-2"><a href="#allEntries">Explore</a></button>
           </Fade>
         </div>
       </div>

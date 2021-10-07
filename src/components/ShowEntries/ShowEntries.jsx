@@ -6,7 +6,7 @@ import './Pagination.css';
 
 const renderData = entries => {
   return(
-    <div className="showEntries">
+    <div className="showEntries" id="allEntries">
       <div className="container-fluid">
         <div className="row">
           <h1 className="text-center mb-4">Featured Entries</h1>
